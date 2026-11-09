@@ -43,17 +43,17 @@
   --live: #96732f;
   --display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --body: "Figtree", "Helvetica Neue", Arial, sans-serif;
-  --scene: .15;
+  --scene: .14;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #10182a; --ink: #e8ecf2; --muted: #a3afc2; --rule: #2c3850; --accent: #a9c1e8; --live: #d3b06b; --scene: .22;
+    --paper: #10182a; --ink: #e8ecf2; --muted: #a3afc2; --rule: #2c3850; --accent: #a9c1e8; --live: #d3b06b; --scene: .18;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --paper: #10182a; --ink: #e8ecf2; --muted: #a3afc2; --rule: #2c3850; --accent: #a9c1e8; --live: #d3b06b; --scene: .22;
+  --paper: #10182a; --ink: #e8ecf2; --muted: #a3afc2; --rule: #2c3850; --accent: #a9c1e8; --live: #d3b06b; --scene: .18;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -70,12 +70,12 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
 
 html { overflow-x: clip; }
 .hero { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
-.hero { --muted: color-mix(in srgb, var(--ink) 82%, var(--paper)); }
+.sheet { --muted: color-mix(in srgb, var(--ink) 82%, var(--paper)); }
 .hero > div, .hero > dl { position: relative; z-index: 1; }
-.hero > .scene { position: absolute; z-index: -1; inset: calc(-1 * clamp(2.5rem, 7vw, 5.5rem)) calc(50% - 50vw) -2.75rem; pointer-events: none; }
-.scene-art { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.8s ease; -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent); mask-image: linear-gradient(to bottom, #000 72%, transparent); }
+.scene { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+.scene-art { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.8s ease; }
 .scene-art.on { opacity: var(--scene); }
-.scene-note { position: absolute; z-index: 1; right: 0; bottom: -2.5rem; display: flex; gap: .75rem; align-items: baseline; margin: 0; font-size: .8125rem; color: var(--muted); }
+.scene-note { position: fixed; z-index: 2; right: .75rem; bottom: .6rem; padding: .1rem .55rem; background: color-mix(in srgb, var(--paper) 86%, transparent); display: flex; gap: .75rem; align-items: baseline; margin: 0; font-size: .8125rem; color: var(--muted); }
 #scene-toggle { background: none; border: 0; padding: .25rem 0; color: var(--muted); font: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; cursor: pointer; }
 @media (prefers-reduced-motion: reduce) { .scene-art { transition: none; } #scene-toggle { display: none; } }
 .role { font-size: 1.2rem; line-height: 1.4; margin-top: 1.1rem; max-width: 34rem; }
@@ -135,7 +135,6 @@ footer { border-top: 1px solid var(--rule); padding-top: 1.1rem; display: flex; 
 
 @media (max-width: 860px) {
   .hero, .track, .two { grid-template-columns: minmax(0, 1fr); }
-  .hero > .scene { top: auto; height: 20rem; }
   .side { position: static; }
   .feeders { display: flex; flex-wrap: wrap; gap: .5rem; border-left: 0; padding: 0; }
   .feeders button { border: 1px solid var(--rule); border-radius: 3px; padding: .45rem .75rem; }
@@ -156,7 +155,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 1.1rem; display: flex; 
   .sheet { max-width: none; padding: 0; gap: 11pt; }
   h1 { font-size: 30pt; } h2 { font-size: 16pt; } h3 { font-size: 9.5pt; }
   .role { font-size: 10.5pt; margin-top: 4pt; }
-  .actions, .feeders, #count, .hero > .scene, .scene-note { display: none; }
+  .actions, .feeders, #count, .scene, .scene-note { display: none; }
   .hero { grid-template-columns: 1.2fr 1fr; gap: 18pt; }
   .facts { gap: 4pt; padding-left: 12pt; }
   .facts dt, .facts dd small { font-size: 9pt; }
@@ -176,15 +175,20 @@ footer { border-top: 1px solid var(--rule); padding-top: 1.1rem; display: flex; 
 </style>
 </head>
 <body>
+<div class="scene" aria-hidden="true">
+  <div class="scene-art on" data-name="Desalación e impulsión" style="background-image:url(images/desalacion.webp)"></div>
+  <div class="scene-art" data-name="Minería" style="background-image:url(images/mineria.webp)"></div>
+  <div class="scene-art" data-name="Subestaciones y transmisión" style="background-image:url(images/subestacion-torres.webp)"></div>
+  <div class="scene-art" data-name="Salas eléctricas" style="background-image:url(images/sala-electrica.webp)"></div>
+  <div class="scene-art" data-name="Plantas de proceso" style="background-image:url(images/planta-proceso.webp)"></div>
+  <div class="scene-art" data-name="Minería y energía" style="background-image:url(images/mineria-energia.webp)"></div>
+  <div class="scene-art" data-name="Subestaciones y transmisión" style="background-image:url(images/subestacion-patio.webp)"></div>
+  <div class="scene-art" data-name="Montaje de salas eléctricas" style="background-image:url(images/sala-montaje.webp)"></div>
+</div>
+<p class="scene-note"><span id="scene-name">Desalación e impulsión</span> <button type="button" id="scene-toggle">Pausar</button></p>
 <main class="sheet">
 
   <header class="hero">
-    <div class="scene" aria-hidden="true">
-      <div class="scene-art on" data-name="Desalación e impulsión" style="background-image:url(images/desalacion.webp)"></div>
-      <div class="scene-art" data-name="Minería" style="background-image:url(images/mineria.webp)"></div>
-      <div class="scene-art" data-name="Plantas de proceso" style="background-image:url(images/planta-proceso.webp)"></div>
-    </div>
-    <p class="scene-note"><span id="scene-name">Desalación e impulsión</span> <button type="button" id="scene-toggle">Pausar</button></p>
     <div>
       <h1>Luis Medina Sepúlveda</h1>
       <p class="role">Jefe de proyecto e ingeniero eléctrico para desalación, minería y energía</p>
