@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luis Medina Sepúlveda, CV</title>
+<meta name="description" content="Jefe de proyecto e ingeniero eléctrico con más de 20 años en desalación, minería, subestaciones y obras públicas en Chile. Ingeniero Civil Industrial.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Luis Medina Sepúlveda, jefe de proyecto e ingeniero eléctrico">
+<meta property="og:description" content="Más de 20 años en desalación, minería, subestaciones y obras públicas en Chile.">
+<meta property="og:locale" content="es_CL">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "dateModified": "2026-11-08",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Luis Rubén Medina Sepúlveda",
+    "jobTitle": "Jefe de proyecto",
+    "worksFor": { "@type": "Organization", "name": "CyD Ingeniería" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Universidad Católica de la Santísima Concepción" },
+      { "@type": "CollegeOrUniversity", "name": "Universidad del Bío-Bío" },
+      { "@type": "CollegeOrUniversity", "name": "Universidad del Desarrollo" }
+    ],
+    "knowsAbout": ["Gestión de proyectos", "Ingeniería eléctrica", "Subestaciones", "Líneas de transmisión", "Plantas desaladoras", "Comisionamiento y puesta en marcha", "SCADA", "BIM"]
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: primera vista con los datos que un reclutador busca; la barra unifilar es el filtro funcional de la trayectoria. */
+:root {
+  --paper: #f4f6f7;
+  --ink: #15242e;
+  --muted: #52636e;
+  --rule: #c6d0d6;
+  --accent: #0b58a8;
+  --live: #a85f00;
+  --display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  --body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #131c23; --ink: #e6ecef; --muted: #9db0bb; --rule: #33444f; --accent: #79b6f2; --live: #f0ae4e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #131c23; --ink: #e6ecef; --muted: #9db0bb; --rule: #33444f; --accent: #79b6f2; --live: #f0ae4e;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.5 var(--body); }
+.sheet { max-width: 70rem; margin: 0 auto; padding: clamp(1.75rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 3rem); display: grid; gap: clamp(2.75rem, 6vw, 4.25rem); }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.75rem, 7vw, 4.5rem); line-height: 1; }
+h2 { font-size: 2rem; line-height: 1.1; }
+h3 { font-size: 1.45rem; line-height: 1.15; }
+p, ul, ol, dl, dd { margin: 0; }
+a { color: var(--accent); text-underline-offset: .18em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.role { font-size: 1.35rem; line-height: 1.3; font-weight: 500; margin-top: .85rem; max-width: 34rem; }
+.lead { margin-top: 1rem; max-width: 36rem; color: var(--muted); }
+.contact { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.25rem; margin-top: 1.4rem; font-weight: 500; }
+.contact span { color: var(--muted); font-weight: 400; }
+.btn { font: 500 .975rem var(--body); color: var(--ink); background: transparent; border: 1px solid var(--ink); border-radius: 3px; padding: .45rem .85rem; min-height: 2.5rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; }
+.btn:hover { background: var(--ink); color: var(--paper); }
+.btn[hidden] { display: none; }
+.actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+
+.facts { display: grid; gap: .85rem; border-left: 3px solid var(--ink); padding-left: 1.5rem; }
+.facts dt { color: var(--muted); font-size: .975rem; }
+.facts dd { font-weight: 500; }
+.facts dd small { display: block; font-size: 1rem; font-weight: 400; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.projects { list-style: none; padding: 0; margin-top: 1.25rem; border-top: 1px solid var(--rule); }
+.projects li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr) minmax(0, 1fr); gap: .25rem 2rem; padding: 1rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.projects b { font: 600 1.85rem/1.1 var(--display); font-variant-numeric: tabular-nums; }
+.projects p { color: var(--muted); }
+.projects strong { font-weight: 600; display: block; }
+.projects span { color: var(--muted); }
+
+.track { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 2rem 3rem; align-items: start; }
+.side { position: sticky; top: 1.25rem; }
+#count { color: var(--muted); font-variant-numeric: tabular-nums; margin-top: .25rem; }
+.feeders { display: grid; margin-top: 1.1rem; border-left: 6px solid var(--ink); padding: .35rem 0; }
+.feeders button { position: relative; text-align: left; background: none; border: 0; color: var(--ink); font: 500 1rem/1.2 var(--body); padding: .6rem .25rem .6rem 3rem; min-height: 2.75rem; cursor: pointer; }
+.feeders button::before { content: ""; position: absolute; left: 0; top: 50%; width: 2.5rem; height: 2px; margin-top: -1px; background: var(--ink); }
+.feeders button::after { content: ""; position: absolute; left: .95rem; top: 50%; width: 12px; height: 12px; margin-top: -6px; background: var(--paper); border: 2px solid var(--ink); }
+.feeders button:hover { text-decoration: underline; text-underline-offset: .18em; }
+.feeders button[aria-pressed="true"] { color: var(--accent); font-weight: 600; }
+.feeders button[aria-pressed="true"]::after { background: var(--accent); border-color: var(--accent); }
+
+.jobs { list-style: none; padding: 0; }
+.job { display: grid; grid-template-columns: 8.25rem minmax(0, 1fr); }
+.job[hidden] { display: none; }
+.when { padding-right: 1.25rem; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 1rem; padding-top: .15rem; }
+.body { position: relative; border-left: 3px solid var(--ink); padding: 0 0 1.75rem 1.5rem; }
+.job:last-child .body { padding-bottom: 0; }
+.body::before { content: ""; position: absolute; left: -9.5px; top: .35rem; width: 16px; height: 16px; background: var(--paper); border: 2px solid var(--ink); }
+.job.current .body::before { background: var(--live); border-color: var(--live); }
+.org { font-weight: 600; margin-top: .1rem; }
+.body ul { margin-top: .4rem; padding-left: 1.1rem; }
+.body li + li { margin-top: .2rem; }
+.body li strong { font-weight: 600; }
+
+.two { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 1.25rem 3rem; }
+.areas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 2.5rem; }
+.areas p { color: var(--muted); margin-top: .2rem; }
+.wide { grid-column: 1 / -1; }
+.edu { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem 2.5rem; }
+.edu span { display: block; color: var(--muted); }
+.edu b { font-weight: 600; }
+footer { border-top: 1px solid var(--rule); padding-top: 1.1rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; }
+
+@media (max-width: 860px) {
+  .hero, .track, .two { grid-template-columns: minmax(0, 1fr); }
+  .side { position: static; }
+  .feeders { display: flex; flex-wrap: wrap; gap: .5rem; border-left: 0; padding: 0; }
+  .feeders button { border: 1px solid var(--rule); border-radius: 3px; padding: .45rem .75rem; }
+  .feeders button::before, .feeders button::after { display: none; }
+  .feeders button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+  .projects li { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 520px) {
+  .areas, .edu { grid-template-columns: minmax(0, 1fr); }
+  .job { grid-template-columns: minmax(0, 1fr); }
+  .when { border-left: 3px solid var(--ink); padding: 0 0 .1rem 1.5rem; }
+  .body::before { top: -1.4rem; }
+}
+@media print {
+  @page { size: letter; margin: 14mm 15mm; }
+  :root { --paper: #fff; --ink: #15242e; --muted: #46555f; --rule: #c6d0d6; --accent: #0b58a8; --live: #a85f00; color-scheme: light; }
+  body { font-size: 9.5pt; line-height: 1.28; }
+  .sheet { max-width: none; padding: 0; gap: 11pt; }
+  h1 { font-size: 26pt; } h2 { font-size: 15pt; } h3 { font-size: 12pt; }
+  .role { font-size: 12pt; }
+  .actions, .feeders, #count { display: none; }
+  .hero { grid-template-columns: 1.2fr 1fr; gap: 18pt; }
+  .facts { gap: 5pt; padding-left: 12pt; }
+  .facts dt, .facts dd small { font-size: 9pt; }
+  .track, .two { grid-template-columns: minmax(0, 1fr); gap: 6pt; }
+  .side { position: static; }
+  .projects { margin-top: 6pt; }
+  .projects li { grid-template-columns: 62pt 1fr 1fr; padding: 4pt 0; gap: 10pt; break-inside: avoid; }
+  .projects b { font-size: 13pt; }
+  .job, .job[hidden] { display: grid; grid-template-columns: 72pt minmax(0, 1fr); break-inside: avoid; }
+  .when { font-size: 9pt; }
+  .body { padding: 0 0 5pt 12pt; }
+  .body::before { width: 9px; height: 9px; left: -6px; top: 3pt; }
+  .areas, .edu { gap: 6pt 18pt; }
+  footer { display: none; }
+}
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <header class="hero">
+    <div>
+      <h1>Luis Medina Sepúlveda</h1>
+      <p class="role">Jefe de proyecto e ingeniero eléctrico para desalación, minería y energía</p>
+      <p class="lead">Más de 20 años gestionando y revisando proyectos eléctrico-mecánicos, desde la ingeniería de perfil hasta el comisionamiento y la puesta en marcha, con control de seguridad, calidad, plazos y costos.</p>
+      <p class="contact">
+        <a href="mailto:luisruben.medina@gmail.com">luisruben.medina@gmail.com</a>
+        <a href="tel:+56998149653">+56 9 9814 9653</a>
+        <span>Santiago, Chile</span>
+      </p>
+      <div class="actions">
+        <button type="button" class="btn" id="copy">Copiar correo</button>
+        <a class="btn" id="pdf" href="cv-luis-medina.pdf" hidden>Descargar CV en PDF</a>
+      </div>
+    </div>
+    <dl class="facts">
+      <div><dt>Cargo actual</dt><dd>Jefe de proyecto, CyD Ingeniería<small>Desde 08/2026</small></dd></div>
+      <div><dt>Cargo anterior</dt><dd>Ingeniero electricista, RyQ Ingeniería<small>12/2025 – 07/2026</small></dd></div>
+      <div><dt>Títulos</dt><dd>Ingeniero Civil Industrial<small>U. Católica de la Santísima Concepción, 2010</small></dd><dd>Ingeniero de Ejecución en Electricidad<small>U. del Bío-Bío, 1998</small></dd></div>
+      <div><dt>Mandantes</dt><dd>MOP, EFE, Codelco, Anglo American, Antofagasta Minerals, Google, Veolia, Essbio, ENAP</dd></div>
+    </dl>
+  </header>
+
+  <section aria-labelledby="refs-t">
+    <h2 id="refs-t">Proyectos destacados</h2>
+    <ol class="projects">
+      <li><b>1200 l/s</b><div><strong>Planta desaladora Coquimbo</strong><span>MOP, Gerencia de Concesiones</span></div><p>Jefe de proyecto en la asesoría a la Inspección Fiscal: revisión de ingeniería de detalle, BIM y coordinación de especialidades.</p></li>
+      <li><b>140 km</b><div><strong>Impulsión de agua de mar SIAM</strong><span>Minera Centinela, para ILF</span></div><p>Soporte eléctrico a la construcción: cuatro plantas, línea de 110 kV y cuatro subestaciones de 15 MVA, hasta la puesta en marcha.</p></li>
+      <li><b>400 l/s</b><div><strong>Desaladora e impulsión de 80 km</strong><span>Minera Los Pelambres, para Veolia</span></div><p>Comisionamiento y puesta en marcha de sistemas de 110/23/3,45 kV, protecciones, control y SCADA.</p></li>
+      <li><b>19 SS/EE</b><div><strong>Subestaciones y líneas EFE</strong><span>Proyecto Infotecnia, para Tecnored</span></div><p>Ingeniero especialista en memorias explicativas y planos, centro y sur de Chile.</p></li>
+      <li><b>QA/QC</b><div><strong>Ampliación Data Center Google Chile</strong><span>Worley</span></div><p>Inspección técnica de media y baja tensión, generadores, respaldo de energía, datos y control.</p></li>
+    </ol>
+  </section>
+
+  <section class="track" aria-labelledby="exp-t">
+    <div class="side">
+      <h2 id="exp-t">Trayectoria</h2>
+      <p id="count" aria-live="polite">16 cargos</p>
+      <div class="feeders" role="group" aria-label="Filtrar trayectoria por sector">
+        <button type="button" data-f="all" aria-pressed="true">Todos los sectores</button>
+        <button type="button" data-f="des" aria-pressed="false">Desalación e impulsión</button>
+        <button type="button" data-f="min" aria-pressed="false">Minería</button>
+        <button type="button" data-f="ene" aria-pressed="false">Subestaciones y transmisión</button>
+        <button type="button" data-f="san" aria-pressed="false">Sanitarias y obras públicas</button>
+        <button type="button" data-f="ind" aria-pressed="false">Data center e industria</button>
+      </div>
+    </div>
+
+    <ol class="jobs">
+      <li class="job current" data-s="des san">
+        <div class="when">08/2026 a la fecha</div>
+        <div class="body"><h3>Jefe de proyecto</h3><div class="org">CyD Ingeniería</div>
+          <ul><li>Asesoría a la Inspección Fiscal MOP, fase de ingeniería de la planta desaladora de 1200 l/s de Coquimbo.</li><li>Revisión de ingeniería de detalle y BIM, coordinación de especialidades, simulación de procesos.</li></ul></div>
+      </li>
+      <li class="job" data-s="san">
+        <div class="when">12/2025 – 07/2026</div>
+        <div class="body"><h3>Ingeniero electricista</h3><div class="org">RyQ Ingeniería, para DOH MOP</div>
+          <ul><li>Asesor eléctrico y electrónico en la conservación de emergencia del colector primario Canal Santa Corina.</li><li>Actualización del proyecto eléctrico y de alumbrado, revisión de memorias y planos, inspección de obras.</li></ul></div>
+      </li>
+      <li class="job" data-s="ene">
+        <div class="when">02/2025 – 10/2025</div>
+        <div class="body"><h3>Ingeniero electricista A</h3><div class="org">Tecnored S.A.</div>
+          <ul><li>Especialista en proyecto Infotecnia para el Coordinador: EFE centro y sur, líneas de transmisión y 19 subestaciones.</li><li>Líneas AT de Anglo American. Desarrollo y revisión de memorias explicativas y planos.</li></ul></div>
+      </li>
+      <li class="job" data-s="min">
+        <div class="when">03/2024 – 10/2024</div>
+        <div class="body"><h3>Ingeniero de proyecto</h3><div class="org">Walvis Iaser Ingeniería, para Minera Antucoya (AMSA)</div>
+          <ul><li>Automatización del control de polvos en chancador y correas: ingeniería de detalle, control y comunicación con SCADA/DCS.</li><li>Gestión del proyecto.</li></ul></div>
+      </li>
+      <li class="job" data-s="min ene">
+        <div class="when">07/2023 – 02/2024</div>
+        <div class="body"><h3>Ingeniero especialista A</h3><div class="org">JEJ Ingeniería, para Anglo American El Soldado</div>
+          <ul><li>Ampliación de planta de ciclones en tranque de relaves, sistemas de 110/12/4,5 kV.</li><li>Revisión técnica, bases, inspección de montaje y análisis técnico-económico de oferentes para VP Proyectos.</li></ul></div>
+      </li>
+      <li class="job" data-s="des min">
+        <div class="when">01/2022 – 05/2023</div>
+        <div class="body"><h3>Ingeniero especialista eléctrico</h3><div class="org">Veolia, para Minera Los Pelambres</div>
+          <ul><li>Comisionamiento y puesta en marcha de desaladora de 400 l/s e impulsión de 80 km.</li><li>Sistemas de 110/23/3,45 kV, subestación, protecciones, control, instrumentación y SCADA de proceso.</li></ul></div>
+      </li>
+      <li class="job" data-s="ind">
+        <div class="when">07/2019 – 04/2021</div>
+        <div class="body"><h3>Inspección técnica</h3><div class="org">Worley, para Data Center Google Chile</div>
+          <ul><li>QA/QC de distribución en baja y media tensión, generadores, planta química, datos, control, CCTV y respaldo.</li><li>Revisión y aprobación de proyecto y construcción, informes técnicos y financieros.</li></ul></div>
+      </li>
+      <li class="job" data-s="san des min">
+        <div class="when">03/2016 – 07/2023</div>
+        <div class="body"><h3>Ingeniero de proyectos (freelance)</h3><div class="org">CDM Smith, para Essbio y Codelco</div>
+          <ul><li>Ampliación de plantas de agua potable Essbio en la VI Región: ingeniería e inspección técnica.</li><li>Ingeniería eléctrica conceptual de desaladoras e impulsión para Codelco Salvador, Andina y Teniente.</li></ul></div>
+      </li>
+      <li class="job" data-s="san">
+        <div class="when">07/2015 – 01/2016</div>
+        <div class="body"><h3>Jefe de producción</h3><div class="org">Aqualia Infraestructuras, PTAS Sembcorp</div>
+          <ul><li>Planta de tratamiento La Cadellada: coordinación de montaje MT/BT, control e instrumentación, personal, compras y calidad.</li><li>Ingeniería de detalle, comisionamiento, puesta en marcha y suministro con Chilectra.</li></ul></div>
+      </li>
+      <li class="job" data-s="des ene">
+        <div class="when">01/2015 – 06/2015</div>
+        <div class="body"><h3>Administrador de contrato</h3><div class="org">COMIN S.A., para Termoeléctrica E-CL</div>
+          <ul><li>Planta desalinizadora Tocopilla: planificación, personal, logística, compras, estados de pago y proveedores.</li><li>Ingeniería de detalle MT, integración a control, comisionamiento y energización.</li></ul></div>
+      </li>
+      <li class="job" data-s="des min san ene">
+        <div class="when">11/2013 – 02/2020</div>
+        <div class="body"><h3>Ingeniero especialista eléctrico (freelance)</h3><div class="org">ILF Ingeniería Chile</div>
+          <ul><li><strong>SIAM, Minera Centinela:</strong> cuatro plantas de impulsión en 140 km, línea de 110 kV y cuatro subestaciones de 15 MVA, 110-3,4 kV. Ingeniería de detalle, inspección, CAPEX, comisionamiento y puesta en marcha.</li><li><strong>Desalación:</strong> Spence (Cintra-Marubeni, Tedagua-Saipem), SWAP (Aguas del Altiplano y Collahuasi), remineralizadora AES Gener.</li><li><strong>Otros:</strong> planta ConCon Esval, expansión SIAM y transientes Estación 4, estudio de impulsión Anglo American Sur.</li></ul></div>
+      </li>
+      <li class="job" data-s="min">
+        <div class="when">04/2012 – 10/2013</div>
+        <div class="body"><h3>Ingeniero especialista eléctrico</h3><div class="org">Termovent Ltda., para Codelco Salvador</div>
+          <ul><li>Mitigación de polvos en chancado y correas: ingeniería de detalle, montaje, control y gestión del proyecto.</li><li>Compras, adicionales, comisionamiento, puesta en marcha y energización.</li></ul></div>
+      </li>
+      <li class="job" data-s="min">
+        <div class="when">11/2010 – 05/2011</div>
+        <div class="body"><h3>Supervisor eléctrico e instrumentación</h3><div class="org">Bechtel, para Anglo American Sur</div>
+          <ul><li>Desarrollo Los Bronces: montaje en salas eléctricas, patios, CCM, instrumentos y subestaciones.</li></ul></div>
+      </li>
+      <li class="job" data-s="ind">
+        <div class="when">01/2006 – 07/2008</div>
+        <div class="body"><h3>Inspección técnica</h3><div class="org">LyL Ingeniería Estructural, para EFE</div>
+          <ul><li>Reparaciones en edificio de control de tráfico de Concepción: inspección y reportes de avance.</li></ul></div>
+      </li>
+      <li class="job" data-s="san">
+        <div class="when">03/2005 – 12/2010</div>
+        <div class="body"><h3>Subgerencia de operaciones, obra eléctrica</h3><div class="org">Constructora Ecobell Ltda.</div>
+          <ul><li>Obras para Essbio, Aguas Nuevo Sur, Aguas Araucanía y Aguas del Maule en las regiones VI a IX.</li><li>Inspección eléctrica, telemetría, redes MT, subestaciones, conexión con CGE y Frontel, puesta en marcha.</li></ul></div>
+      </li>
+      <li class="job" data-s="ind">
+        <div class="when">02/2000 – 02/2005</div>
+        <div class="body"><h3>Ingeniero de terreno</h3><div class="org">DSD Construcciones y Montajes</div>
+          <ul><li>Planta Celulosa Arauco Valdivia; unidades MHC y saturación de benceno en Refinería ENAP.</li><li>Documentos de construcción, carpetas vendor y control de calidad.</li></ul></div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="two" aria-labelledby="areas-t">
+    <h2 id="areas-t">Especialidades</h2>
+    <div class="areas">
+      <div><h3>Contratos y proyectos</h3><p>Planificación física y financiera, negociación de adicionales, control CAPEX/OPEX, estados de pago, logística de proveedores.</p></div>
+      <div><h3>Distribución de energía</h3><p>Subestaciones, líneas de 110, 66 y 23 kV, switchgear, CCM, GIS y transformadores de poder.</p></div>
+      <div><h3>Montaje industrial y procesos</h3><p>Desaladoras, concentradoras, relaves, bombeo de alta presión y plantas de tratamiento.</p></div>
+      <div><h3>Automatización y comunicaciones</h3><p>Filosofías de operación, mapas de memoria PLC/SCADA/DCS, instrumentación analítica y redes de datos.</p></div>
+      <div class="wide"><h3>Software</h3><p>ETAP, DIgSILENT, AutoCAD, Revit, IPwin, Aconex, Python, DIALux, Microsoft Office y Google.</p></div>
+    </div>
+  </section>
+
+  <section class="two" aria-labelledby="edu-t">
+    <h2 id="edu-t">Formación</h2>
+    <div class="edu">
+      <div><b>Ingeniería Civil Industrial</b><span>U. Católica de la Santísima Concepción, 2010</span></div>
+      <div><b>Ingeniería de Ejecución en Electricidad</b><span>Universidad del Bío-Bío, 1998</span></div>
+      <div><b>Diplomado en BIM, modelación y coordinación de proyectos</b><span>Universidad del Desarrollo, 2023</span></div>
+      <div><b>Diplomado en Automatización Industrial</b><span>Universidad del Bío-Bío, 2009</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Conversemos sobre su próximo proyecto.</span>
+    <a href="mailto:luisruben.medina@gmail.com">luisruben.medina@gmail.com</a>
+  </footer>
+</main>
+<script>
+(function () {
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.feeders button'));
+  var jobs = Array.prototype.slice.call(document.querySelectorAll('.job'));
+  var count = document.getElementById('count');
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.getAttribute('data-f'), n = 0;
+      buttons.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      jobs.forEach(function (j) {
+        var show = f === 'all' || j.getAttribute('data-s').split(' ').indexOf(f) !== -1;
+        j.hidden = !show;
+        if (show) n++;
+      });
+      count.textContent = n + (n === 1 ? ' cargo' : ' cargos');
+    });
+  });
+
+  var copy = document.getElementById('copy');
+  copy.addEventListener('click', function () {
+    var done = function (t) { copy.textContent = t; setTimeout(function () { copy.textContent = 'Copiar correo'; }, 2000); };
+    try {
+      navigator.clipboard.writeText('luisruben.medina@gmail.com').then(function () { done('Correo copiado'); }, function () { done('Copia el correo manualmente'); });
+    } catch (e) { done('Copia el correo manualmente'); }
+  });
+
+  /* El botón de PDF aparece solo si el archivo está junto a esta página. */
+  var pdf = document.getElementById('pdf');
+  try {
+    fetch(pdf.getAttribute('href'), { method: 'HEAD' }).then(function (r) {
+      if (r.ok && (r.headers.get('content-type') || '').indexOf('pdf') !== -1) pdf.hidden = false;
+    }).catch(function () {});
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
