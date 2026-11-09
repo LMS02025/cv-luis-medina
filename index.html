@@ -25,66 +25,67 @@
       { "@type": "CollegeOrUniversity", "name": "Universidad del Bío-Bío" },
       { "@type": "CollegeOrUniversity", "name": "Universidad del Desarrollo" }
     ],
-    "knowsAbout": ["Gestión de proyectos", "Ingeniería eléctrica", "Subestaciones", "Líneas de transmisión", "Plantas desaladoras", "Comisionamiento y puesta en marcha", "SCADA", "BIM"]
+    "knowsAbout": ["Transformación digital", "Automatización en la nube", "Gestión de proyectos", "Ingeniería eléctrica", "Subestaciones", "Líneas de transmisión", "Plantas desaladoras", "Comisionamiento y puesta en marcha", "SCADA", "BIM"]
   }
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* Layout: primera vista con los datos que un reclutador busca; la barra unifilar es el filtro funcional de la trayectoria. */
 :root {
-  --paper: #f4f6f7;
-  --ink: #15242e;
-  --muted: #52636e;
-  --rule: #c6d0d6;
-  --accent: #0b58a8;
-  --live: #a85f00;
-  --display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
-  --body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --paper: #fafbfc;
+  --ink: #152238;
+  --muted: #55647a;
+  --rule: #d9dfe7;
+  --accent: #1f3a68;
+  --live: #96732f;
+  --display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --body: "Figtree", "Helvetica Neue", Arial, sans-serif;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #131c23; --ink: #e6ecef; --muted: #9db0bb; --rule: #33444f; --accent: #79b6f2; --live: #f0ae4e;
+    --paper: #10182a; --ink: #e8ecf2; --muted: #a3afc2; --rule: #2c3850; --accent: #a9c1e8; --live: #d3b06b;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --paper: #131c23; --ink: #e6ecef; --muted: #9db0bb; --rule: #33444f; --accent: #79b6f2; --live: #f0ae4e;
+  --paper: #10182a; --ink: #e8ecf2; --muted: #a3afc2; --rule: #2c3850; --accent: #a9c1e8; --live: #d3b06b;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.5 var(--body); }
-.sheet { max-width: 70rem; margin: 0 auto; padding: clamp(1.75rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 3rem); display: grid; gap: clamp(2.75rem, 6vw, 4.25rem); }
-h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; text-wrap: balance; }
-h1 { font-size: clamp(2.75rem, 7vw, 4.5rem); line-height: 1; }
-h2 { font-size: 2rem; line-height: 1.1; }
-h3 { font-size: 1.45rem; line-height: 1.15; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.6 var(--body); font-variant-numeric: lining-nums; }
+.sheet { max-width: 70rem; margin: 0 auto; padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.25rem, 4vw, 3rem); display: grid; gap: clamp(3.5rem, 8vw, 6rem); }
+h1, h2 { font-family: var(--display); font-weight: 500; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(3rem, 7.5vw, 5rem); line-height: 1.02; letter-spacing: -.01em; }
+h2 { font-size: 2.25rem; line-height: 1.1; }
+h3 { margin: 0; font-family: var(--body); font-size: 1.0625rem; line-height: 1.35; font-weight: 600; text-wrap: balance; }
 p, ul, ol, dl, dd { margin: 0; }
-a { color: var(--accent); text-underline-offset: .18em; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: .22em; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
-.role { font-size: 1.35rem; line-height: 1.3; font-weight: 500; margin-top: .85rem; max-width: 34rem; }
+.role { font-size: 1.2rem; line-height: 1.4; margin-top: 1.1rem; max-width: 34rem; }
 .lead { margin-top: 1rem; max-width: 36rem; color: var(--muted); }
-.contact { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.25rem; margin-top: 1.4rem; font-weight: 500; }
+.contact { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem; margin-top: 1.75rem; }
 .contact span { color: var(--muted); font-weight: 400; }
-.btn { font: 500 .975rem var(--body); color: var(--ink); background: transparent; border: 1px solid var(--ink); border-radius: 3px; padding: .45rem .85rem; min-height: 2.5rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; }
-.btn:hover { background: var(--ink); color: var(--paper); }
+.btn { font: 500 .9rem var(--body); color: var(--ink); background: transparent; border: 1px solid var(--rule); border-radius: 2px; padding: .45rem .85rem; min-height: 2.5rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; }
+.btn:hover { border-color: var(--ink); }
 .btn[hidden] { display: none; }
 .actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
 
-.facts { display: grid; gap: .85rem; border-left: 3px solid var(--ink); padding-left: 1.5rem; }
-.facts dt { color: var(--muted); font-size: .975rem; }
+.facts { display: grid; gap: 1.1rem; border-left: 1px solid var(--rule); padding-left: 2rem; }
+.facts dt { color: var(--muted); font-size: .875rem; margin-bottom: .1rem; }
 .facts dd { font-weight: 500; }
-.facts dd small { display: block; font-size: 1rem; font-weight: 400; color: var(--muted); font-variant-numeric: tabular-nums; }
+.facts dd + dd { margin-top: .4rem; }
+.facts dd small { display: block; font-size: .9rem; font-weight: 400; color: var(--muted); font-variant-numeric: tabular-nums; }
 
 .projects { list-style: none; padding: 0; margin-top: 1.25rem; border-top: 1px solid var(--rule); }
-.projects li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr) minmax(0, 1fr); gap: .25rem 2rem; padding: 1rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
-.projects b { font: 600 1.85rem/1.1 var(--display); font-variant-numeric: tabular-nums; }
+.projects li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr) minmax(0, 1.2fr); gap: .25rem 2rem; padding: 1.35rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.projects b { font: 500 2.1rem/1.1 var(--display); font-variant-numeric: lining-nums; }
 .projects p { color: var(--muted); }
 .projects strong { font-weight: 600; display: block; }
 .projects span { color: var(--muted); }
@@ -92,26 +93,26 @@ a { color: var(--accent); text-underline-offset: .18em; }
 .track { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 2rem 3rem; align-items: start; }
 .side { position: sticky; top: 1.25rem; }
 #count { color: var(--muted); font-variant-numeric: tabular-nums; margin-top: .25rem; }
-.feeders { display: grid; margin-top: 1.1rem; border-left: 6px solid var(--ink); padding: .35rem 0; }
-.feeders button { position: relative; text-align: left; background: none; border: 0; color: var(--ink); font: 500 1rem/1.2 var(--body); padding: .6rem .25rem .6rem 3rem; min-height: 2.75rem; cursor: pointer; }
-.feeders button::before { content: ""; position: absolute; left: 0; top: 50%; width: 2.5rem; height: 2px; margin-top: -1px; background: var(--ink); }
-.feeders button::after { content: ""; position: absolute; left: .95rem; top: 50%; width: 12px; height: 12px; margin-top: -6px; background: var(--paper); border: 2px solid var(--ink); }
+.feeders { display: grid; margin-top: 1.25rem; border-left: 1px solid var(--ink); padding: .25rem 0; }
+.feeders button { position: relative; text-align: left; background: none; border: 0; color: var(--ink); font: 400 .95rem/1.25 var(--body); padding: .6rem .25rem .6rem 2.4rem; min-height: 2.75rem; cursor: pointer; }
+.feeders button::before { content: ""; position: absolute; left: 0; top: 50%; width: 2rem; height: 1px; background: var(--ink); }
+.feeders button::after { content: ""; position: absolute; left: .8rem; top: 50%; width: 9px; height: 9px; margin-top: -4px; background: var(--paper); border: 1px solid var(--ink); }
 .feeders button:hover { text-decoration: underline; text-underline-offset: .18em; }
-.feeders button[aria-pressed="true"] { color: var(--accent); font-weight: 600; }
+.feeders button[aria-pressed="true"] { color: var(--accent); font-weight: 500; }
 .feeders button[aria-pressed="true"]::after { background: var(--accent); border-color: var(--accent); }
 
 .jobs { list-style: none; padding: 0; }
 .job { display: grid; grid-template-columns: 8.25rem minmax(0, 1fr); }
 .job[hidden] { display: none; }
 .when { padding-right: 1.25rem; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 1rem; padding-top: .15rem; }
-.body { position: relative; border-left: 3px solid var(--ink); padding: 0 0 1.75rem 1.5rem; }
+.body { position: relative; border-left: 1px solid var(--rule); padding: 0 0 2.25rem 1.75rem; }
 .job:last-child .body { padding-bottom: 0; }
-.body::before { content: ""; position: absolute; left: -9.5px; top: .35rem; width: 16px; height: 16px; background: var(--paper); border: 2px solid var(--ink); }
+.body::before { content: ""; position: absolute; left: -5px; top: .45rem; width: 9px; height: 9px; background: var(--paper); border: 1px solid var(--ink); }
 .job.current .body::before { background: var(--live); border-color: var(--live); }
-.org { font-weight: 600; margin-top: .1rem; }
-.body ul { margin-top: .4rem; padding-left: 1.1rem; }
+.org { font-weight: 500; }
+.body ul { margin-top: .5rem; padding: 0; list-style: none; color: var(--muted); max-width: 42rem; }
 .body li + li { margin-top: .2rem; }
-.body li strong { font-weight: 600; }
+.body li strong { font-weight: 500; color: var(--ink); }
 
 .two { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 1.25rem 3rem; }
 .areas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 2.5rem; }
@@ -119,7 +120,7 @@ a { color: var(--accent); text-underline-offset: .18em; }
 .wide { grid-column: 1 / -1; }
 .edu { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem 2.5rem; }
 .edu span { display: block; color: var(--muted); }
-.edu b { font-weight: 600; }
+.edu b { font-weight: 500; }
 footer { border-top: 1px solid var(--rule); padding-top: 1.1rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; }
 
 @media (max-width: 860px) {
@@ -134,29 +135,30 @@ footer { border-top: 1px solid var(--rule); padding-top: 1.1rem; display: flex; 
 @media (max-width: 520px) {
   .areas, .edu { grid-template-columns: minmax(0, 1fr); }
   .job { grid-template-columns: minmax(0, 1fr); }
-  .when { border-left: 3px solid var(--ink); padding: 0 0 .1rem 1.5rem; }
-  .body::before { top: -1.4rem; }
+  .when { border-left: 1px solid var(--rule); padding: 0 0 .1rem 1.75rem; }
+  .body::before { top: -1.35rem; }
 }
 @media print {
   @page { size: letter; margin: 14mm 15mm; }
-  :root { --paper: #fff; --ink: #15242e; --muted: #46555f; --rule: #c6d0d6; --accent: #0b58a8; --live: #a85f00; color-scheme: light; }
-  body { font-size: 9.5pt; line-height: 1.28; }
+  :root { --paper: #fff; --ink: #152238; --muted: #4a586c; --rule: #d9dfe7; --accent: #1f3a68; --live: #96732f; color-scheme: light; }
+  body { font-size: 9pt; line-height: 1.32; }
   .sheet { max-width: none; padding: 0; gap: 11pt; }
-  h1 { font-size: 26pt; } h2 { font-size: 15pt; } h3 { font-size: 12pt; }
-  .role { font-size: 12pt; }
+  h1 { font-size: 30pt; } h2 { font-size: 16pt; } h3 { font-size: 9.5pt; }
+  .role { font-size: 10.5pt; margin-top: 4pt; }
   .actions, .feeders, #count { display: none; }
   .hero { grid-template-columns: 1.2fr 1fr; gap: 18pt; }
-  .facts { gap: 5pt; padding-left: 12pt; }
+  .facts { gap: 4pt; padding-left: 12pt; }
   .facts dt, .facts dd small { font-size: 9pt; }
   .track, .two { grid-template-columns: minmax(0, 1fr); gap: 6pt; }
   .side { position: static; }
   .projects { margin-top: 6pt; }
   .projects li { grid-template-columns: 62pt 1fr 1fr; padding: 4pt 0; gap: 10pt; break-inside: avoid; }
-  .projects b { font-size: 13pt; }
+  .projects b { font-size: 14pt; }
   .job, .job[hidden] { display: grid; grid-template-columns: 72pt minmax(0, 1fr); break-inside: avoid; }
   .when { font-size: 9pt; }
   .body { padding: 0 0 5pt 12pt; }
-  .body::before { width: 9px; height: 9px; left: -6px; top: 3pt; }
+  .body ul { margin-top: 1pt; }
+  .body::before { width: 7px; height: 7px; left: -4px; top: 3pt; }
   .areas, .edu { gap: 6pt 18pt; }
   footer { display: none; }
 }
@@ -169,7 +171,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 1.1rem; display: flex; 
     <div>
       <h1>Luis Medina Sepúlveda</h1>
       <p class="role">Jefe de proyecto e ingeniero eléctrico para desalación, minería y energía</p>
-      <p class="lead">Más de 20 años gestionando y revisando proyectos eléctrico-mecánicos, desde la ingeniería de perfil hasta el comisionamiento y la puesta en marcha, con control de seguridad, calidad, plazos y costos.</p>
+      <p class="lead">Más de 20 años gestionando y revisando proyectos eléctrico-mecánicos, desde la ingeniería de perfil hasta el comisionamiento y la puesta en marcha, con control de seguridad, calidad, plazos y costos. Hoy integro transformación digital y automatización en la nube, a un semestre de titularme en Ingeniería en Tecnologías de la Información.</p>
       <p class="contact">
         <a href="mailto:luisruben.medina@gmail.com">luisruben.medina@gmail.com</a>
         <a href="tel:+56998149653">+56 9 9814 9653</a>
@@ -183,7 +185,8 @@ footer { border-top: 1px solid var(--rule); padding-top: 1.1rem; display: flex; 
     <dl class="facts">
       <div><dt>Cargo actual</dt><dd>Jefe de proyecto, CyD Ingeniería<small>Desde 08/2026</small></dd></div>
       <div><dt>Cargo anterior</dt><dd>Ingeniero electricista, RyQ Ingeniería<small>12/2025 – 07/2026</small></dd></div>
-      <div><dt>Grado y títulos</dt><dd>Magíster en Ingeniería Industrial y de Sistemas, con distinción<small>Universidad del Desarrollo</small></dd><dd>Ingeniero Civil Industrial, con voto de distinción<small>U. Católica de la Santísima Concepción, 2014</small></dd><dd>Ingeniero de Ejecución en Electricidad<small>Universidad del Bío-Bío, 1999</small></dd></div>
+      <div><dt>Grado y títulos</dt><dd>Magíster en Ingeniería Industrial y de Sistemas, con distinción<small>Universidad del Desarrollo, 2015</small></dd><dd>Ingeniero Civil Industrial, con voto de distinción<small>U. Católica de la Santísima Concepción, 2014</small></dd><dd>Ingeniero de Ejecución en Electricidad<small>Universidad del Bío-Bío, 1999</small></dd></div>
+      <div><dt>En curso</dt><dd>Ingeniería en Tecnologías de la Información<small>Universidad San Sebastián, a un semestre de titulación</small></dd></div>
       <div><dt>Mandantes</dt><dd>MOP, EFE, Codelco, Anglo American, Antofagasta Minerals, Google, Veolia, Essbio, ENAP</dd></div>
     </dl>
   </header>
@@ -304,6 +307,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 1.1rem; display: flex; 
       <div><h3>Distribución de energía</h3><p>Subestaciones, líneas de 110, 66 y 23 kV, switchgear, CCM, GIS y transformadores de poder.</p></div>
       <div><h3>Montaje industrial y procesos</h3><p>Desaladoras, concentradoras, relaves, bombeo de alta presión y plantas de tratamiento.</p></div>
       <div><h3>Automatización y comunicaciones</h3><p>Filosofías de operación, mapas de memoria PLC/SCADA/DCS, instrumentación analítica y redes de datos.</p></div>
+      <div class="wide"><h3>Transformación digital y nube</h3><p>Integración de la automatización industrial con servicios en la nube y digitalización de procesos. Formación universitaria en servicios cloud, DevSecOps, ciberseguridad, bases de datos y ciencia de datos.</p></div>
       <div class="wide"><h3>Software</h3><p>ETAP, DIgSILENT, AutoCAD, Revit, IPwin, Aconex, Python, DIALux, Microsoft Office y Google.</p></div>
     </div>
   </section>
@@ -311,7 +315,8 @@ footer { border-top: 1px solid var(--rule); padding-top: 1.1rem; display: flex; 
   <section class="two" aria-labelledby="edu-t">
     <h2 id="edu-t">Formación</h2>
     <div class="edu">
-      <div><b>Magíster en Ingeniería Industrial y de Sistemas, con distinción</b><span>Universidad del Desarrollo</span></div>
+      <div><b>Ingeniería en Tecnologías de la Información (en curso)</b><span>Universidad San Sebastián, a un semestre de titulación</span></div>
+      <div><b>Magíster en Ingeniería Industrial y de Sistemas, con distinción</b><span>Universidad del Desarrollo, 2015</span></div>
       <div><b>Ingeniero Civil Industrial, con voto de distinción</b><span>U. Católica de la Santísima Concepción, 2014</span></div>
       <div><b>Licenciado en Ciencias de la Ingeniería</b><span>U. Católica de la Santísima Concepción, 2010</span></div>
       <div><b>Ingeniero de Ejecución en Electricidad</b><span>Universidad del Bío-Bío, 1999</span></div>
