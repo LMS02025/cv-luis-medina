@@ -133,6 +133,44 @@ html { overflow-x: clip; }
 .edu b { font-weight: 500; }
 footer { border-top: 1px solid var(--rule); padding-top: 1.1rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; }
 
+/* Relieve: el texto clave se eleva sobre la hoja; los botones se hunden al pulsarlos. */
+:root { --ext1: #2b3b55; --ext2: #66758c; --drop: rgba(21,34,56,.15); --drop2: rgba(21,34,56,.08); --edge: #c3ccd8; --hi: rgba(255,255,255,.9); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --ext1: #8d9bb2; --ext2: #46556f; --drop: rgba(0,0,0,.5); --drop2: rgba(0,0,0,.32); --edge: #070c18; --hi: rgba(255,255,255,.07); }
+}
+:root[data-theme="dark"] { --ext1: #8d9bb2; --ext2: #46556f; --drop: rgba(0,0,0,.5); --drop2: rgba(0,0,0,.32); --edge: #070c18; --hi: rgba(255,255,255,.07); }
+
+h1, h2, .projects b {
+  text-shadow:
+    0 max(1px, .014em) 0 var(--ext1),
+    0 max(2px, .028em) 0 var(--ext2),
+    0 max(3px, .05em) max(2px, .04em) var(--drop),
+    0 .12em .22em var(--drop),
+    0 .26em .5em var(--drop2);
+  transform: translateY(-1px);
+  transition: text-shadow 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);
+}
+.js-lift :is(h1, h2, .projects b):not(.up) { text-shadow: none; transform: translateY(2px); }
+
+.btn { background: var(--paper); box-shadow: inset 0 1px 0 var(--hi), 0 2px 0 var(--edge), 0 4px 10px var(--drop2); transition: transform .14s ease, box-shadow .14s ease, border-color .2s ease; }
+.btn:hover { transform: translateY(-1px); box-shadow: inset 0 1px 0 var(--hi), 0 3px 0 var(--edge), 0 8px 16px var(--drop); }
+.btn:active { transform: translateY(2px); box-shadow: inset 0 2px 5px var(--drop), 0 0 0 var(--edge), 0 0 0 transparent; transition-duration: .05s; }
+
+.feeders button { transition: transform .14s ease, color .2s ease; }
+.feeders button::after { box-shadow: 0 1px 0 var(--edge), 0 2px 3px var(--drop); transition: box-shadow .14s ease; }
+.feeders button:active { transform: translateY(1px); }
+.feeders button:active::after, .feeders button[aria-pressed="true"]::after { box-shadow: inset 0 1px 2px rgba(0,0,0,.4); }
+#scene-toggle { transition: transform .1s ease; }
+#scene-toggle:active { transform: translateY(1px); }
+
+@media (max-width: 860px) {
+  .feeders button { background: var(--paper); box-shadow: inset 0 1px 0 var(--hi), 0 2px 0 var(--edge), 0 3px 8px var(--drop2); transition: transform .14s ease, box-shadow .14s ease, background-color .2s ease; }
+  .feeders button:active, .feeders button[aria-pressed="true"] { transform: translateY(2px); box-shadow: inset 0 2px 5px rgba(0,0,0,.3); }
+}
+@media (prefers-reduced-motion: reduce) {
+  h1, h2, .projects b, .btn, .feeders button { transition: none; }
+}
+
 @media (max-width: 860px) {
   .hero, .track, .two { grid-template-columns: minmax(0, 1fr); }
   .side { position: static; }
@@ -171,6 +209,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 1.1rem; display: flex; 
   .body::before { width: 7px; height: 7px; left: -4px; top: 3pt; }
   .areas, .edu { gap: 6pt 18pt; }
   footer { display: none; }
+  h1, h2, .projects b { text-shadow: none; transform: none; }
 }
 </style>
 </head>
@@ -352,6 +391,17 @@ footer { border-top: 1px solid var(--rule); padding-top: 1.1rem; display: flex; 
 </main>
 <script>
 (function () {
+  /* El texto clave emerge de la hoja al entrar en pantalla. */
+  var lifts = Array.prototype.slice.call(document.querySelectorAll('h1, h2, .projects b'));
+  if ('IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    document.documentElement.classList.add('js-lift');
+    document.querySelectorAll('.projects b').forEach(function (el, i) { el.style.transitionDelay = (i * 110) + 'ms'; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('up'); io.unobserve(e.target); } });
+    }, { threshold: 0.5 });
+    lifts.forEach(function (el) { io.observe(el); });
+  }
+
   var buttons = Array.prototype.slice.call(document.querySelectorAll('.feeders button'));
   var jobs = Array.prototype.slice.call(document.querySelectorAll('.job'));
   var count = document.getElementById('count');
